@@ -14,16 +14,16 @@ api_hash = "3f57cc57f8883bd604baf3b814ffe023"
 
 TELEGRAM_TOKEN = "7978076940:AAGRmPFltKll2IHozoNQpdGIl_WuSvrbHyM"
 
-TELEGRAM_CHAT_ID = -4536205797  # Replace with your Telegram chat ID
+TELEGRAM_CHAT_ID = -4503296969  # Replace with your Telegram chat ID
 
 # Bot Parameters
 SYMBOL = "BTCUSDT"
-INTERVAL = "1s"  # 1-minute candles for live trading
-SL_PERCENT = 0.00035  # Stop-loss percentage (3.5%)
-TP_PERCENT = 0.0004  # Take-profit percentage (1.8%)
-MOVE_SL_TRIGGER = 0.00025  # Move SL when price goes 1% above entry price
+INTERVAL = "5m"  # 1-minute candles for live trading
+SL_PERCENT = 0.035  # Stop-loss percentage (3.5%)
+TP_PERCENT = 0.004  # Take-profit percentage (1.8%)
+MOVE_SL_TRIGGER = 0.0025  # Move SL when price goes 1% above entry price
 DELAY = 0.1  # Delay between price checks (in seconds)
-DONE_DELAY=5.1
+DONE_DELAY=905.1
 
 # Initialize Bot
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=TELEGRAM_TOKEN)
