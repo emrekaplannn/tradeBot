@@ -19,11 +19,11 @@ TELEGRAM_CHAT_ID = -4536205797  # Replace with your Telegram chat ID
 # Bot Parameters
 SYMBOL = "BTCUSDT"
 INTERVAL = "1s"  # 1-minute candles for live trading
-SL_PERCENT = 0.035  # Stop-loss percentage (3.5%)
-TP_PERCENT = 0.004  # Take-profit percentage (1.8%)
-MOVE_SL_TRIGGER = 0.0025  # Move SL when price goes 1% above entry price
+SL_PERCENT = 0.00035  # Stop-loss percentage (3.5%)
+TP_PERCENT = 0.0004  # Take-profit percentage (1.8%)
+MOVE_SL_TRIGGER = 0.00025  # Move SL when price goes 1% above entry price
 DELAY = 0.1  # Delay between price checks (in seconds)
-DONE_DELAY=3
+DONE_DELAY=5.1
 
 # Initialize Bot
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=TELEGRAM_TOKEN)
@@ -67,22 +67,22 @@ async def run_strategy():
             if position is None:
                 # Trigger Buy Signal
                 entry_price = close_prices[-1]
-                stop_loss = entry_price -100.0 #* (1 - SL_PERCENT)
-                take_profit = entry_price +50.0 # * (1 + TP_PERCENT)
+                stop_loss = entry_price * (1 - SL_PERCENT)
+                take_profit = entry_price * (1 + TP_PERCENT)
                 position = {"entry_price": entry_price, "stop_loss": stop_loss, "take_profit": take_profit}
                 pos_type=True
-                await send_message(f"🔔 NEW BUY SIGNAL: Entry at {entry_price:.2f}, SL={stop_loss:.2f}, TP={take_profit:.2f}")
+                await send_message(f"🔔 YENİ LONG SİNYALİ\nGiriş: {entry_price:.2f}, SL={stop_loss:.2f}, TP={take_profit:.2f}")
                 continue
         
         elif all(close < open for close, open in zip(close_prices, open_prices)):
             if position is None:
                 # Trigger Buy Signal
                 entry_price = close_prices[-1]
-                stop_loss = entry_price +100.0 #* (1 + SL_PERCENT)
-                take_profit = entry_price -50.0 #* (1 - TP_PERCENT)
+                stop_loss = entry_price * (1 + SL_PERCENT)
+                take_profit = entry_price * (1 - TP_PERCENT)
                 position = {"entry_price": entry_price, "stop_loss": stop_loss, "take_profit": take_profit}
                 pos_type=False
-                await send_message(f"🔔 NEW SELL SIGNAL: Entry at {entry_price:.2f}, SL={stop_loss:.2f}, TP={take_profit:.2f}")
+                await send_message(f"🔔 YENİ SHORT SİNYALİ\nGiriş: {entry_price:.2f}, SL={stop_loss:.2f}, TP={take_profit:.2f}")
                 continue
 
         # If a position is open, monitor the price
@@ -91,41 +91,47 @@ async def run_strategy():
 
             if pos_type:
                 # Move SL to entry price if price goes 1% above entry
-                if current_price >= position["entry_price"] +25: #* (1 + MOVE_SL_TRIGGER):
+                if current_price >= position["entry_price"] * (1 + MOVE_SL_TRIGGER) and x:
                     position["stop_loss"] = position["entry_price"]
-                    await send_message(f"(BUY SIGNAL)🔔 SL MOVED TO ENTRY: New SL = {position['stop_loss']:.2f}")
+                    await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position['stop_loss']:.2f}")
                     x=False
 
                 # Trigger Sell Signal if price falls below SL
                 if current_price <= position["stop_loss"]:
-                    await send_message(f"(BUY SIGNAL)🔔 STOP LOSSS: Exited at {current_price:.2f}, SL hit!")
+                    if position["stop_loss"] == position["entry_price"]:
+                        await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
+                    else:
+                        await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
                     position = None
                     x=True
                     await asyncio.sleep(DONE_DELAY)
 
                 # Trigger Buy Signal if price goes above TP
                 elif current_price >= position["take_profit"]:
-                    await send_message(f"(BUY SIGNAL)🔔 TAKE PROFITTT: Exited at {current_price:.2f}, TP hit!")
+                    await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
                     position = None
                     x=True
                     await asyncio.sleep(DONE_DELAY)
             else:
                 # Move SL to entry price if price goes 1% above entry
-                if current_price <= position["entry_price"] -25: #* (1 - MOVE_SL_TRIGGER):
+                if current_price <= position["entry_price"] * (1 - MOVE_SL_TRIGGER) and x:
                     position["stop_loss"] = position["entry_price"]
-                    await send_message(f"(SELL SIGNAL)🔔 SL MOVED TO ENTRY: New SL = {position['stop_loss']:.2f}")
+                    await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position['stop_loss']:.2f}")
                     x=False
 
                 # Trigger Sell Signal if price falls below SL
                 if current_price >= position["stop_loss"]:
-                    await send_message(f"(SELL SIGNAL)🔔 STOP LOSSS: Exited at {current_price:.2f}, SL hit!")
+                    if position["stop_loss"] == position["entry_price"]:
+                        await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
+                    else:
+                        await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
                     position = None
                     x=True
                     await asyncio.sleep(DONE_DELAY)
 
                 # Trigger Buy Signal if price goes above TP
                 elif current_price <= position["take_profit"]:
-                    await send_message(f"(SELL SIGNAL)🔔 TAKE PROFITTT: Exited at {current_price:.2f}, TP hit!")
+                    await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
                     position = None
                     x=True
                     await asyncio.sleep(DONE_DELAY)
