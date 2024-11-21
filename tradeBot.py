@@ -50,6 +50,7 @@ async def run_strategy():
     position = None  # No open position initially
     x=True
     pos_type=True
+    await send_message(f"🔔 Trade bot started by MRanewliz. Hadi para basalım!!")
     while True:
 
         # Fetch the latest candles
