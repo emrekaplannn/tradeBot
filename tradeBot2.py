@@ -12,9 +12,9 @@ BINANCE_KLINES_ENDPOINT = "/api/v3/klines"
 api_id = 28610306
 api_hash = "3f57cc57f8883bd604baf3b814ffe023"
 
-TELEGRAM_TOKEN = "7802370522:AAGQbwAcvLE1YeIK7uVw1xl35MrNVdDM6lo"
+TELEGRAM_TOKEN = "7978076940:AAGRmPFltKll2IHozoNQpdGIl_WuSvrbHyM"
 
-TELEGRAM_CHAT_ID = -4536205797  # Replace with your Telegram chat ID
+TELEGRAM_CHAT_ID = -4503296969  # Replace with your Telegram chat ID
 
 # Bot Parameters
 SYMBOL = "BTCUSDT"
@@ -22,10 +22,10 @@ SYMBOL2 = "ETHUSDT"
 SYMBOL3 = "SOLUSDT"
 SYMBOL4 = "XRPUSDT"
 SYMBOL5 = "DOGEUSDT"
-INTERVAL = "1m"  # 1-minute candles for live trading
-SL_PERCENT = 0.0035  # Stop-loss percentage (3.5%)
-TP_PERCENT = 0.0004  # Take-profit percentage (1.8%)
-MOVE_SL_TRIGGER = 0.00025  # Move SL when price goes 1% above entry price
+INTERVAL = "5m"  # 1-minute candles for live trading
+SL_PERCENT = 0.035  # Stop-loss percentage (3.5%)
+TP_PERCENT = 0.004  # Take-profit percentage (1.8%)
+MOVE_SL_TRIGGER = 0.0025  # Move SL when price goes 1% above entry price
 DELAY = 0.1  # Delay between price checks (in seconds)
 DONE_DELAY=905.1
 availability=0
@@ -81,7 +81,7 @@ async def run_strategy():
     availability4=0
     availability5=0
 
-    await send_message(f"🔔 Trade bot started by MRanewliz. Hadi para basalım!!")
+    await send_message(f"🔔 Trade bot started by MRanewliz. BTC, ETH, SOL, XRP, DOGE verileri analiz ediliyor.. Hadi para basalım!!")
 
     while True:
 
@@ -296,7 +296,7 @@ async def run_strategy():
                         await send_message(f"(BTC LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
                     position = None
                     x=True
-                    availability=1800
+                    availability=9000
                     #await asyncio.sleep(DONE_DELAY)
 
                 # Trigger Buy Signal if price goes above TP
@@ -305,7 +305,7 @@ async def run_strategy():
                     position = None
                     x=True
                     #await asyncio.sleep(DONE_DELAY)
-                    availability=1800
+                    availability=9000
             else:
                 # Move SL to entry price if price goes 1% above entry
                 if current_priced <= position["entry_price"] * (1 - MOVE_SL_TRIGGER) and x:
@@ -321,7 +321,7 @@ async def run_strategy():
                         await send_message(f"(BTC SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
                     position = None
                     x=True
-                    availability=1800
+                    availability=9000
                     #await asyncio.sleep(DONE_DELAY)
 
                 # Trigger Buy Signal if price goes above TP
@@ -329,7 +329,7 @@ async def run_strategy():
                     await send_message(f"(BTC SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
                     position = None
                     x=True
-                    availability=1800
+                    availability=9000
                     #await asyncio.sleep(DONE_DELAY)
 
 
@@ -354,7 +354,7 @@ async def run_strategy():
                         await send_message(f"(ETH LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
                     position2 = None
                     x2=True
-                    availability2=1800
+                    availability2=9000
                     #await asyncio.sleep(DONE_DELAY)
 
                 # Trigger Buy Signal if price goes above TP
@@ -362,7 +362,7 @@ async def run_strategy():
                     await send_message(f"(ETH LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
                     position2 = None
                     x2=True
-                    availability2=1800
+                    availability2=9000
                     #await asyncio.sleep(DONE_DELAY)
             else:
                 # Move SL to entry price if price goes 1% above entry
@@ -379,7 +379,7 @@ async def run_strategy():
                         await send_message(f"(ETH SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
                     position2 = None
                     x2=True
-                    availability2=1800
+                    availability2=9000
                     #await asyncio.sleep(DONE_DELAY)
 
                 # Trigger Buy Signal if price goes above TP
@@ -387,7 +387,7 @@ async def run_strategy():
                     await send_message(f"(ETH SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
                     position2 = None
                     x2=True
-                    availability2=1800
+                    availability2=9000
                     #await asyncio.sleep(DONE_DELAY)
 
 
@@ -413,7 +413,7 @@ async def run_strategy():
                         await send_message(f"(SOL LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
                     position3 = None
                     x3=True
-                    availability3=1800
+                    availability3=9000
                     #await asyncio.sleep(DONE_DELAY)
 
                 # Trigger Buy Signal if price goes above TP
@@ -421,7 +421,7 @@ async def run_strategy():
                     await send_message(f"(SOL LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
                     position3 = None
                     x3=True
-                    availability3=1800
+                    availability3=9000
                     #await asyncio.sleep(DONE_DELAY)
             else:
                 # Move SL to entry price if price goes 1% above entry
@@ -438,7 +438,7 @@ async def run_strategy():
                         await send_message(f"(SOL SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
                     position3 = None
                     x3=True
-                    availability3=1800
+                    availability3=9000
                     #await asyncio.sleep(DONE_DELAY)
 
                 # Trigger Buy Signal if price goes above TP
@@ -446,7 +446,7 @@ async def run_strategy():
                     await send_message(f"(SOL SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
                     position3 = None
                     x3=True
-                    availability3=1800
+                    availability3=9000
                     #await asyncio.sleep(DONE_DELAY)
 
 
@@ -474,7 +474,7 @@ async def run_strategy():
                         await send_message(f"(XRP LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.4f}")
                     position4 = None
                     x4=True
-                    availability4=1800
+                    availability4=9000
                     #await asyncio.sleep(DONE_DELAY)
 
                 # Trigger Buy Signal if price goes above TP
@@ -482,7 +482,7 @@ async def run_strategy():
                     await send_message(f"(XRP LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.4f}")
                     position4 = None
                     x4=True
-                    availability4=1800
+                    availability4=9000
                     #await asyncio.sleep(DONE_DELAY)
             else:
                 # Move SL to entry price if price goes 1% above entry
@@ -499,7 +499,7 @@ async def run_strategy():
                         await send_message(f"(XRP SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.4f}")
                     position4 = None
                     x4=True
-                    availability4=1800
+                    availability4=9000
                     #await asyncio.sleep(DONE_DELAY)
 
                 # Trigger Buy Signal if price goes above TP
@@ -507,7 +507,7 @@ async def run_strategy():
                     await send_message(f"(XRP SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.4f}")
                     position4 = None
                     x4=True
-                    availability4=1800
+                    availability4=9000
                     #await asyncio.sleep(DONE_DELAY)
 
 
@@ -535,7 +535,7 @@ async def run_strategy():
                         await send_message(f"(DOGE LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.5f}")
                     position5 = None
                     x5=True
-                    availability5=1800
+                    availability5=9000
                     #await asyncio.sleep(DONE_DELAY)
 
                 # Trigger Buy Signal if price goes above TP
@@ -543,7 +543,7 @@ async def run_strategy():
                     await send_message(f"(DOGE LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.5f}")
                     position5 = None
                     x5=True
-                    availability5=1800
+                    availability5=9000
                     #await asyncio.sleep(DONE_DELAY)
             else:
                 # Move SL to entry price if price goes 1% above entry
@@ -560,7 +560,7 @@ async def run_strategy():
                         await send_message(f"(DOGE SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.5f}")
                     position5 = None
                     x5=True
-                    availability5=1800
+                    availability5=9000
                     #await asyncio.sleep(DONE_DELAY)
 
                 # Trigger Buy Signal if price goes above TP
@@ -568,7 +568,7 @@ async def run_strategy():
                     await send_message(f"(DOGE SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.5f}")
                     position5 = None
                     x5=True
-                    availability5=1800
+                    availability5=9000
                     #await asyncio.sleep(DONE_DELAY)
 
 
