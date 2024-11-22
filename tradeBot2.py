@@ -249,21 +249,31 @@ async def run_strategy():
                 await send_message(f"🔔DOGE YENİ SHORT SİNYALİ\nGiriş: {entry_price5:.5f}, SL={stop_loss5:.5f}, TP={take_profit5:.5f}")
 
 
-        await send_message(f"**Avail1: {availability}, Avail2: {availability2}, Avail3: {availability3}, Avail4: {availability4}, Avail5: {availability5}")
+        
 
         if availability > 0:
+            if availability>=1800 or availability==1200 or availability==500 or availability<0:
+                await send_message(f"**Avail1: {availability}")
             availability-=1
 
         if availability2 > 0:
+            if availability2>=1800 or availability2==1200 or availability2==500:
+                await send_message(f"**Avail12: {availability2}")
             availability2-=1
 
         if availability3 > 0:
+            if availability3>=1800 or availability3==1200 or availability3==500:
+                await send_message(f"**Avail13: {availability3}")
             availability3-=1
 
         if availability4 > 0:
+            if availability4>=1800 or availability4==1200 or availability4==500:
+                await send_message(f"**Avail14: {availability4}")
             availability4-=1
 
         if availability5 > 0:
+            if availability5>=1800 or availability5==1200 or availability5==500:
+                await send_message(f"**Avail15: {availability5}")
             availability5-=1
 
         # If a btc position is open, monitor the price
