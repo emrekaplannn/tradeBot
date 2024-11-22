@@ -146,7 +146,7 @@ async def run_strategy():
                 take_profit = entry_price * (1 + TP_PERCENT)
                 position = {"entry_price": entry_price, "stop_loss": stop_loss, "take_profit": take_profit}
                 pos_type=True
-                await send_message(f"🔔 YENİ LONG SİNYALİ\nGiriş: {entry_price:.2f}, SL={stop_loss:.2f}, TP={take_profit:.2f}")
+                await send_message(f"🔔BTC YENİ LONG SİNYALİ\nGiriş: {entry_price:.2f}, SL={stop_loss:.2f}, TP={take_profit:.2f}")
         
         elif availability==0 and all(close < open for close, open in zip(close_prices_lysis, open_prices_lysis)):
             if position is None:
@@ -156,7 +156,7 @@ async def run_strategy():
                 take_profit = entry_price * (1 - TP_PERCENT)
                 position = {"entry_price": entry_price, "stop_loss": stop_loss, "take_profit": take_profit}
                 pos_type=False
-                await send_message(f"🔔 YENİ SHORT SİNYALİ\nGiriş: {entry_price:.2f}, SL={stop_loss:.2f}, TP={take_profit:.2f}")
+                await send_message(f"🔔BTC YENİ SHORT SİNYALİ\nGiriş: {entry_price:.2f}, SL={stop_loss:.2f}, TP={take_profit:.2f}")
 
 
         # Check eth if last 3 candles' close > open
@@ -168,7 +168,7 @@ async def run_strategy():
                 take_profit2 = entry_price2 * (1 + TP_PERCENT)
                 position2 = {"entry_price": entry_price2, "stop_loss": stop_loss2, "take_profit": take_profit2}
                 pos_type2=True
-                await send_message(f"🔔 YENİ LONG SİNYALİ\nGiriş: {entry_price2:.2f}, SL={stop_loss2:.2f}, TP={take_profit2:.2f}")
+                await send_message(f"🔔ETH YENİ LONG SİNYALİ\nGiriş: {entry_price2:.2f}, SL={stop_loss2:.2f}, TP={take_profit2:.2f}")
         
         elif availability2==0 and all(close < open for close, open in zip(close_prices_lysis2, open_prices_lysis2)):
             if position2 is None:
@@ -178,7 +178,7 @@ async def run_strategy():
                 take_profit2 = entry_price2 * (1 - TP_PERCENT)
                 position2 = {"entry_price": entry_price2, "stop_loss": stop_loss2, "take_profit": take_profit2}
                 pos_type2=False
-                await send_message(f"🔔 YENİ SHORT SİNYALİ\nGiriş: {entry_price2:.2f}, SL={stop_loss2:.2f}, TP={take_profit2:.2f}")
+                await send_message(f"🔔ETH YENİ SHORT SİNYALİ\nGiriş: {entry_price2:.2f}, SL={stop_loss2:.2f}, TP={take_profit2:.2f}")
 
 
         # Check sol if last 3 candles' close > open
@@ -190,7 +190,7 @@ async def run_strategy():
                 take_profit3 = entry_price3 * (1 + TP_PERCENT)
                 position3 = {"entry_price": entry_price3, "stop_loss": stop_loss3, "take_profit": take_profit3}
                 pos_type3=True
-                await send_message(f"🔔 YENİ LONG SİNYALİ\nGiriş: {entry_price3:.2f}, SL={stop_loss3:.2f}, TP={take_profit3:.2f}")
+                await send_message(f"🔔SOL YENİ LONG SİNYALİ\nGiriş: {entry_price3:.2f}, SL={stop_loss3:.2f}, TP={take_profit3:.2f}")
         
         elif availability3==0 and all(close < open for close, open in zip(close_prices_lysis3, open_prices_lysis3)):
             if position3 is None:
@@ -200,7 +200,7 @@ async def run_strategy():
                 take_profit3 = entry_price3 * (1 - TP_PERCENT)
                 position3 = {"entry_price": entry_price3, "stop_loss": stop_loss3, "take_profit": take_profit3}
                 pos_type3=False
-                await send_message(f"🔔 YENİ SHORT SİNYALİ\nGiriş: {entry_price3:.2f}, SL={stop_loss3:.2f}, TP={take_profit3:.2f}")
+                await send_message(f"🔔SOL YENİ SHORT SİNYALİ\nGiriş: {entry_price3:.2f}, SL={stop_loss3:.2f}, TP={take_profit3:.2f}")
 
 
 
@@ -213,7 +213,7 @@ async def run_strategy():
                 take_profit4 = entry_price4 * (1 + TP_PERCENT)
                 position4 = {"entry_price": entry_price4, "stop_loss": stop_loss4, "take_profit": take_profit4}
                 pos_type4=True
-                await send_message(f"🔔 YENİ LONG SİNYALİ\nGiriş: {entry_price4:.2f}, SL={stop_loss4:.2f}, TP={take_profit4:.2f}")
+                await send_message(f"🔔XRP YENİ LONG SİNYALİ\nGiriş: {entry_price4:.2f}, SL={stop_loss4:.2f}, TP={take_profit4:.2f}")
         
         elif availability4==0 and all(close < open for close, open in zip(close_prices_lysis4, open_prices_lysis4)):
             if position4 is None:
@@ -223,7 +223,7 @@ async def run_strategy():
                 take_profit4 = entry_price4 * (1 - TP_PERCENT)
                 position4 = {"entry_price": entry_price4, "stop_loss": stop_loss4, "take_profit": take_profit4}
                 pos_type4=False
-                await send_message(f"🔔 YENİ SHORT SİNYALİ\nGiriş: {entry_price4:.2f}, SL={stop_loss4:.2f}, TP={take_profit4:.2f}")
+                await send_message(f"🔔XRP YENİ SHORT SİNYALİ\nGiriş: {entry_price4:.2f}, SL={stop_loss4:.2f}, TP={take_profit4:.2f}")
 
 
 
@@ -236,7 +236,7 @@ async def run_strategy():
                 take_profit5 = entry_price5 * (1 + TP_PERCENT)
                 position5 = {"entry_price": entry_price5, "stop_loss": stop_loss5, "take_profit": take_profit5}
                 pos_type5=True
-                await send_message(f"🔔 YENİ LONG SİNYALİ\nGiriş: {entry_price5:.2f}, SL={stop_loss5:.2f}, TP={take_profit5:.2f}")
+                await send_message(f"🔔DOGE YENİ LONG SİNYALİ\nGiriş: {entry_price5:.2f}, SL={stop_loss5:.2f}, TP={take_profit5:.2f}")
         
         elif availability5==0 and all(close < open for close, open in zip(close_prices_lysis5, open_prices_lysis5)):
             if position5 is None:
@@ -246,7 +246,7 @@ async def run_strategy():
                 take_profit5 = entry_price5 * (1 - TP_PERCENT)
                 position5 = {"entry_price": entry_price5, "stop_loss": stop_loss5, "take_profit": take_profit5}
                 pos_type5=False
-                await send_message(f"🔔 YENİ SHORT SİNYALİ\nGiriş: {entry_price5:.2f}, SL={stop_loss5:.2f}, TP={take_profit5:.2f}")
+                await send_message(f"🔔DOGE YENİ SHORT SİNYALİ\nGiriş: {entry_price5:.2f}, SL={stop_loss5:.2f}, TP={take_profit5:.2f}")
 
         if availability > 0:
             availability-=1
@@ -271,15 +271,15 @@ async def run_strategy():
                 # Move SL to entry price if price goes 1% above entry
                 if current_price >= position["entry_price"] * (1 + MOVE_SL_TRIGGER) and x:
                     position["stop_loss"] = position["entry_price"]
-                    await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position['stop_loss']:.2f}")
+                    await send_message(f"(BTC LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position['stop_loss']:.2f}")
                     x=False
 
                 # Trigger Sell Signal if price falls below SL
                 if current_price <= position["stop_loss"]:
                     if position["stop_loss"] == position["entry_price"]:
-                        await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
+                        await send_message(f"(BTC LONG SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
                     else:
-                        await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
+                        await send_message(f"(BTC LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
                     position = None
                     x=True
                     availability=1800
@@ -287,7 +287,7 @@ async def run_strategy():
 
                 # Trigger Buy Signal if price goes above TP
                 elif current_price >= position["take_profit"]:
-                    await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
+                    await send_message(f"(BTC LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
                     position = None
                     x=True
                     #await asyncio.sleep(DONE_DELAY)
@@ -296,15 +296,15 @@ async def run_strategy():
                 # Move SL to entry price if price goes 1% above entry
                 if current_price <= position["entry_price"] * (1 - MOVE_SL_TRIGGER) and x:
                     position["stop_loss"] = position["entry_price"]
-                    await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position['stop_loss']:.2f}")
+                    await send_message(f"(BTC SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position['stop_loss']:.2f}")
                     x=False
 
                 # Trigger Sell Signal if price falls below SL
                 if current_price >= position["stop_loss"]:
                     if position["stop_loss"] == position["entry_price"]:
-                        await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
+                        await send_message(f"(BTC SHORT SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
                     else:
-                        await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
+                        await send_message(f"(BTC SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
                     position = None
                     x=True
                     availability=1800
@@ -312,7 +312,7 @@ async def run_strategy():
 
                 # Trigger Buy Signal if price goes above TP
                 elif current_price <= position["take_profit"]:
-                    await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
+                    await send_message(f"(BTC SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price:.2f}")
                     position = None
                     x=True
                     availability=1800
@@ -328,15 +328,15 @@ async def run_strategy():
                 # Move SL to entry price if price goes 1% above entry
                 if current_price2 >= position2["entry_price"] * (1 + MOVE_SL_TRIGGER) and x2:
                     position2["stop_loss"] = position2["entry_price"]
-                    await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position2['stop_loss']:.2f}")
+                    await send_message(f"(ETH LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position2['stop_loss']:.2f}")
                     x2=False
 
                 # Trigger Sell Signal if price falls below SL
                 if current_price2 <= position2["stop_loss"]:
                     if position2["stop_loss"] == position2["entry_price"]:
-                        await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
+                        await send_message(f"(ETH LONG SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
                     else:
-                        await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
+                        await send_message(f"(ETH LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
                     position2 = None
                     x2=True
                     availability2=1800
@@ -344,7 +344,7 @@ async def run_strategy():
 
                 # Trigger Buy Signal if price goes above TP
                 elif current_price2 >= position2["take_profit"]:
-                    await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
+                    await send_message(f"(ETH LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
                     position2 = None
                     x2=True
                     availability2=1800
@@ -353,15 +353,15 @@ async def run_strategy():
                 # Move SL to entry price if price goes 1% above entry
                 if current_price2 <= position2["entry_price"] * (1 - MOVE_SL_TRIGGER) and x2:
                     position2["stop_loss"] = position2["entry_price"]
-                    await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position2['stop_loss']:.2f}")
+                    await send_message(f"(ETH SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position2['stop_loss']:.2f}")
                     x2=False
 
                 # Trigger Sell Signal if price falls below SL
                 if current_price2 >= position2["stop_loss"]:
                     if position2["stop_loss"] == position2["entry_price"]:
-                        await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
+                        await send_message(f"(ETH SHORT SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
                     else:
-                        await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
+                        await send_message(f"(ETH SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
                     position2 = None
                     x2=True
                     availability2=1800
@@ -369,7 +369,7 @@ async def run_strategy():
 
                 # Trigger Buy Signal if price goes above TP
                 elif current_price2 <= position2["take_profit"]:
-                    await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
+                    await send_message(f"(ETH SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price2:.2f}")
                     position2 = None
                     x2=True
                     availability2=1800
@@ -386,15 +386,15 @@ async def run_strategy():
                 # Move SL to entry price if price goes 1% above entry
                 if current_price3 >= position3["entry_price"] * (1 + MOVE_SL_TRIGGER) and x3:
                     position3["stop_loss"] = position3["entry_price"]
-                    await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position3['stop_loss']:.2f}")
+                    await send_message(f"(SOL LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position3['stop_loss']:.2f}")
                     x3=False
 
                 # Trigger Sell Signal if price falls below SL
                 if current_price3 <= position3["stop_loss"]:
                     if position3["stop_loss"] == position3["entry_price"]:
-                        await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
+                        await send_message(f"(SOL LONG SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
                     else:
-                        await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
+                        await send_message(f"(SOL LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
                     position3 = None
                     x3=True
                     availability3=1800
@@ -402,7 +402,7 @@ async def run_strategy():
 
                 # Trigger Buy Signal if price goes above TP
                 elif current_price3 >= position3["take_profit"]:
-                    await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
+                    await send_message(f"(SOL LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
                     position3 = None
                     x3=True
                     availability3=1800
@@ -411,15 +411,15 @@ async def run_strategy():
                 # Move SL to entry price if price goes 1% above entry
                 if current_price3 <= position3["entry_price"] * (1 - MOVE_SL_TRIGGER) and x3:
                     position3["stop_loss"] = position3["entry_price"]
-                    await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position3['stop_loss']:.2f}")
+                    await send_message(f"(SOL SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position3['stop_loss']:.2f}")
                     x3=False
 
                 # Trigger Sell Signal if price falls below SL
                 if current_price3 >= position3["stop_loss"]:
                     if position3["stop_loss"] == position3["entry_price"]:
-                        await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
+                        await send_message(f"(SOL SHORT SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
                     else:
-                        await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
+                        await send_message(f"(SOL SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
                     position3 = None
                     x3=True
                     availability3=1800
@@ -427,7 +427,7 @@ async def run_strategy():
 
                 # Trigger Buy Signal if price goes above TP
                 elif current_price3 <= position3["take_profit"]:
-                    await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
+                    await send_message(f"(SOL SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price3:.2f}")
                     position3 = None
                     x3=True
                     availability3=1800
@@ -446,15 +446,15 @@ async def run_strategy():
                 # Move SL to entry price if price goes 1% above entry
                 if current_price4 >= position4["entry_price"] * (1 + MOVE_SL_TRIGGER) and x4:
                     position4["stop_loss"] = position4["entry_price"]
-                    await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position4['stop_loss']:.2f}")
+                    await send_message(f"(XRP LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position4['stop_loss']:.2f}")
                     x4=False
 
                 # Trigger Sell Signal if price falls below SL
                 if current_price4 <= position4["stop_loss"]:
                     if position4["stop_loss"] == position4["entry_price"]:
-                        await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.2f}")
+                        await send_message(f"(XRP LONG SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.2f}")
                     else:
-                        await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.2f}")
+                        await send_message(f"(XRP LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.2f}")
                     position4 = None
                     x4=True
                     availability4=1800
@@ -462,7 +462,7 @@ async def run_strategy():
 
                 # Trigger Buy Signal if price goes above TP
                 elif current_price4 >= position4["take_profit"]:
-                    await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.2f}")
+                    await send_message(f"(XRP LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.2f}")
                     position4 = None
                     x4=True
                     availability4=1800
@@ -471,15 +471,15 @@ async def run_strategy():
                 # Move SL to entry price if price goes 1% above entry
                 if current_price4 <= position4["entry_price"] * (1 - MOVE_SL_TRIGGER) and x4:
                     position4["stop_loss"] = position4["entry_price"]
-                    await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position4['stop_loss']:.2f}")
+                    await send_message(f"(XRP SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position4['stop_loss']:.2f}")
                     x4=False
 
                 # Trigger Sell Signal if price falls below SL
                 if current_price4 >= position4["stop_loss"]:
                     if position4["stop_loss"] == position4["entry_price"]:
-                        await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.2f}")
+                        await send_message(f"(XRP SHORT SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.2f}")
                     else:
-                        await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.2f}")
+                        await send_message(f"(XRP SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.2f}")
                     position4 = None
                     x4=True
                     availability4=1800
@@ -487,7 +487,7 @@ async def run_strategy():
 
                 # Trigger Buy Signal if price goes above TP
                 elif current_price4 <= position4["take_profit"]:
-                    await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.2f}")
+                    await send_message(f"(XRP SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price4:.2f}")
                     position4 = None
                     x4=True
                     availability4=1800
@@ -506,15 +506,15 @@ async def run_strategy():
                 # Move SL to entry price if price goes 1% above entry
                 if current_price5 >= position5["entry_price"] * (1 + MOVE_SL_TRIGGER) and x5:
                     position5["stop_loss"] = position5["entry_price"]
-                    await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position5['stop_loss']:.2f}")
+                    await send_message(f"(DOGE LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position5['stop_loss']:.2f}")
                     x5=False
 
                 # Trigger Sell Signal if price falls below SL
                 if current_price5 <= position5["stop_loss"]:
                     if position5["stop_loss"] == position5["entry_price"]:
-                        await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.2f}")
+                        await send_message(f"(DOGE LONG SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.2f}")
                     else:
-                        await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.2f}")
+                        await send_message(f"(DOGE LONG SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.2f}")
                     position5 = None
                     x5=True
                     availability5=1800
@@ -522,7 +522,7 @@ async def run_strategy():
 
                 # Trigger Buy Signal if price goes above TP
                 elif current_price5 >= position5["take_profit"]:
-                    await send_message(f"(LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.2f}")
+                    await send_message(f"(DOGE LONG SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.2f}")
                     position5 = None
                     x5=True
                     availability5=1800
@@ -531,15 +531,15 @@ async def run_strategy():
                 # Move SL to entry price if price goes 1% above entry
                 if current_price5 <= position5["entry_price"] * (1 - MOVE_SL_TRIGGER) and x5:
                     position5["stop_loss"] = position5["entry_price"]
-                    await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position5['stop_loss']:.2f}")
+                    await send_message(f"(DOGE SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position5['stop_loss']:.2f}")
                     x5=False
 
                 # Trigger Sell Signal if price falls below SL
                 if current_price5 >= position5["stop_loss"]:
                     if position5["stop_loss"] == position5["entry_price"]:
-                        await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.2f}")
+                        await send_message(f"(DOGE SHORT SİNYALİ GÜNCELLEME)\n🔔 GİRİŞ NOKTASINA DÖNDÜK❎\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.2f}")
                     else:
-                        await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.2f}")
+                        await send_message(f"(DOGE SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP ÇALIŞTI❌\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.2f}")
                     position5 = None
                     x5=True
                     availability5=1800
@@ -547,7 +547,7 @@ async def run_strategy():
 
                 # Trigger Buy Signal if price goes above TP
                 elif current_price5 <= position5["take_profit"]:
-                    await send_message(f"(SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.2f}")
+                    await send_message(f"(DOGE SHORT SİNYALİ GÜNCELLEME)\n🔔 HEDEFE ULAŞILDI✅\nİŞLEMİ KAPAT! Çıkış seviyesi: {current_price5:.2f}")
                     position5 = None
                     x5=True
                     availability5=1800
