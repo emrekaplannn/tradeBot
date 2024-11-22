@@ -279,10 +279,11 @@ async def run_strategy():
         # If a btc position is open, monitor the price
         if position :
             current_price = close_prices[-1]
+            current_priced = close_prices[-2]
 
             if pos_type:
                 # Move SL to entry price if price goes 1% above entry
-                if current_price >= position["entry_price"] * (1 + MOVE_SL_TRIGGER) and x:
+                if current_priced >= position["entry_price"] * (1 + MOVE_SL_TRIGGER) and x:
                     position["stop_loss"] = position["entry_price"]
                     await send_message(f"(BTC LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position['stop_loss']:.2f}")
                     x=False
@@ -307,7 +308,7 @@ async def run_strategy():
                     availability=1800
             else:
                 # Move SL to entry price if price goes 1% above entry
-                if current_price <= position["entry_price"] * (1 - MOVE_SL_TRIGGER) and x:
+                if current_priced <= position["entry_price"] * (1 - MOVE_SL_TRIGGER) and x:
                     position["stop_loss"] = position["entry_price"]
                     await send_message(f"(BTC SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position['stop_loss']:.2f}")
                     x=False
@@ -336,10 +337,11 @@ async def run_strategy():
         # If a eth position is open, monitor the price
         if position2 :
             current_price2 = close_prices2[-1]
+            current_priced2 = close_prices2[-2]
 
             if pos_type2:
                 # Move SL to entry price if price goes 1% above entry
-                if current_price2 >= position2["entry_price"] * (1 + MOVE_SL_TRIGGER) and x2:
+                if current_priced2 >= position2["entry_price"] * (1 + MOVE_SL_TRIGGER) and x2:
                     position2["stop_loss"] = position2["entry_price"]
                     await send_message(f"(ETH LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position2['stop_loss']:.2f}")
                     x2=False
@@ -364,7 +366,7 @@ async def run_strategy():
                     #await asyncio.sleep(DONE_DELAY)
             else:
                 # Move SL to entry price if price goes 1% above entry
-                if current_price2 <= position2["entry_price"] * (1 - MOVE_SL_TRIGGER) and x2:
+                if current_priced2 <= position2["entry_price"] * (1 - MOVE_SL_TRIGGER) and x2:
                     position2["stop_loss"] = position2["entry_price"]
                     await send_message(f"(ETH SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position2['stop_loss']:.2f}")
                     x2=False
@@ -394,10 +396,11 @@ async def run_strategy():
         # If a sol position is open, monitor the price
         if position3 :
             current_price3 = close_prices3[-1]
+            current_priced3 = close_prices3[-2]
 
             if pos_type3:
                 # Move SL to entry price if price goes 1% above entry
-                if current_price3 >= position3["entry_price"] * (1 + MOVE_SL_TRIGGER) and x3:
+                if current_priced3 >= position3["entry_price"] * (1 + MOVE_SL_TRIGGER) and x3:
                     position3["stop_loss"] = position3["entry_price"]
                     await send_message(f"(SOL LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position3['stop_loss']:.2f}")
                     x3=False
@@ -422,7 +425,7 @@ async def run_strategy():
                     #await asyncio.sleep(DONE_DELAY)
             else:
                 # Move SL to entry price if price goes 1% above entry
-                if current_price3 <= position3["entry_price"] * (1 - MOVE_SL_TRIGGER) and x3:
+                if current_priced3 <= position3["entry_price"] * (1 - MOVE_SL_TRIGGER) and x3:
                     position3["stop_loss"] = position3["entry_price"]
                     await send_message(f"(SOL SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position3['stop_loss']:.2f}")
                     x3=False
@@ -454,10 +457,11 @@ async def run_strategy():
         # If a xrp position is open, monitor the price
         if position4 :
             current_price4 = close_prices4[-1]
+            current_priced4 = close_prices4[-2]
 
             if pos_type4:
                 # Move SL to entry price if price goes 1% above entry
-                if current_price4 >= position4["entry_price"] * (1 + MOVE_SL_TRIGGER) and x4:
+                if current_priced4 >= position4["entry_price"] * (1 + MOVE_SL_TRIGGER) and x4:
                     position4["stop_loss"] = position4["entry_price"]
                     await send_message(f"(XRP LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position4['stop_loss']:.4f}")
                     x4=False
@@ -482,7 +486,7 @@ async def run_strategy():
                     #await asyncio.sleep(DONE_DELAY)
             else:
                 # Move SL to entry price if price goes 1% above entry
-                if current_price4 <= position4["entry_price"] * (1 - MOVE_SL_TRIGGER) and x4:
+                if current_priced4 <= position4["entry_price"] * (1 - MOVE_SL_TRIGGER) and x4:
                     position4["stop_loss"] = position4["entry_price"]
                     await send_message(f"(XRP SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position4['stop_loss']:.4f}")
                     x4=False
@@ -514,10 +518,11 @@ async def run_strategy():
         # If a doge position is open, monitor the price
         if position5 :
             current_price5 = close_prices5[-1]
+            current_priced5 = close_prices5[-2]
 
             if pos_type5:
                 # Move SL to entry price if price goes 1% above entry
-                if current_price5 >= position5["entry_price"] * (1 + MOVE_SL_TRIGGER) and x5:
+                if current_priced5 >= position5["entry_price"] * (1 + MOVE_SL_TRIGGER) and x5:
                     position5["stop_loss"] = position5["entry_price"]
                     await send_message(f"(DOGE LONG SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position5['stop_loss']:.5f}")
                     x5=False
@@ -542,7 +547,7 @@ async def run_strategy():
                     #await asyncio.sleep(DONE_DELAY)
             else:
                 # Move SL to entry price if price goes 1% above entry
-                if current_price5 <= position5["entry_price"] * (1 - MOVE_SL_TRIGGER) and x5:
+                if current_priced5 <= position5["entry_price"] * (1 - MOVE_SL_TRIGGER) and x5:
                     position5["stop_loss"] = position5["entry_price"]
                     await send_message(f"(DOGE SHORT SİNYALİ GÜNCELLEME)\n🔔 STOP GİRİŞE ÇEKİLDİ🟢\nGüncel SL = {position5['stop_loss']:.5f}")
                     x5=False
