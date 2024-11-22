@@ -252,27 +252,27 @@ async def run_strategy():
         
 
         if availability > 0:
-            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Format the timestamp
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]  # Format the timestamp with milliseconds
             await send_message(f"**Avail1: {availability}, {current_time}")
             availability-=10
 
         if availability2 > 0:
-            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Format the timestamp
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]  # Format the timestamp with milliseconds
             await send_message(f"**Avail12: {availability2}, {current_time}")
             availability2-=10
 
         if availability3 > 0:
-            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Format the timestamp
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]  # Format the timestamp with milliseconds
             await send_message(f"**Avail13: {availability3}, {current_time}")
             availability3-=10
 
         if availability4 > 0:
-            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Format the timestamp
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]  # Format the timestamp with milliseconds
             await send_message(f"**Avail14: {availability4}, {current_time}")
             availability4-=10
 
         if availability5 > 0:
-            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Format the timestamp
+            current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]  # Format the timestamp with milliseconds
             await send_message(f"**Avail15: {availability5}, {current_time}")
             availability5-=10
 
