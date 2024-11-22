@@ -75,6 +75,12 @@ async def run_strategy():
     pos_type4=True
     pos_type5=True
 
+    availability=0
+    availability2=0
+    availability3=0
+    availability4=0
+    availability5=0
+
     await send_message(f"🔔 Trade bot started by MRanewliz. Hadi para basalım!!")
 
     while True:
