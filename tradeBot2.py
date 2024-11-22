@@ -253,28 +253,28 @@ async def run_strategy():
 
         if availability > 0:
             current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]  # Format the timestamp with milliseconds
-            await send_message(f"**Avail1: {availability}, {current_time}")
-            availability-=10
+            #await send_message(f"**Avail1: {availability}, {current_time}")
+            availability-=15
 
         if availability2 > 0:
             current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]  # Format the timestamp with milliseconds
-            await send_message(f"**Avail12: {availability2}, {current_time}")
-            availability2-=10
+            #await send_message(f"**Avail12: {availability2}, {current_time}")
+            availability2-=15
 
         if availability3 > 0:
             current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]  # Format the timestamp with milliseconds
-            await send_message(f"**Avail13: {availability3}, {current_time}")
-            availability3-=10
+            #await send_message(f"**Avail13: {availability3}, {current_time}")
+            availability3-=15
 
         if availability4 > 0:
             current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]  # Format the timestamp with milliseconds
-            await send_message(f"**Avail14: {availability4}, {current_time}")
-            availability4-=10
+            #await send_message(f"**Avail14: {availability4}, {current_time}")
+            availability4-=15
 
         if availability5 > 0:
             current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")[:-3]  # Format the timestamp with milliseconds
-            await send_message(f"**Avail15: {availability5}, {current_time}")
-            availability5-=10
+            #await send_message(f"**Avail15: {availability5}, {current_time}")
+            availability5-=15
 
         # If a btc position is open, monitor the price
         if position :
